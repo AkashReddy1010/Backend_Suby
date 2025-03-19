@@ -10,7 +10,7 @@ const path = require('path');
 
 const app = express()
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 
@@ -26,7 +26,7 @@ app.use('/product',productRoutes);
 app.use('/uploads',express.static('uploads'))
 
 
-app.use('/home',(req,res)=>{
+app.use('/',(req,res)=>{
     res.send("Welcome to Suby")
 })
 
